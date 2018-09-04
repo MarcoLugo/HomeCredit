@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[1]:
-
-
 import numpy as np
 import numpy.lib.recfunctions as rfn # for record arrays
 import pandas as pd
@@ -27,8 +21,6 @@ import lightgbm as lgb
 import warnings
 warnings.filterwarnings("ignore")
 
-
-# In[2]:
 
 
 class ProcessData:
@@ -343,9 +335,6 @@ class ProcessData:
             Two Pandas dataframes: one containing the train set IDs and TARGET values and one containing the test set IDs.
         """
         return self.__ids_train, self.__ids_test
-
-
-# In[3]:
 
 
 class FeaturesApplication(ProcessData):
@@ -1069,9 +1058,6 @@ class FeaturesBureau(ProcessData):
         return df2
 
 
-# In[4]:
-
-
 class HomeCredit:
     """Class for handling the HomeCredit model training/validation as well as data loading/processing.
     """
@@ -1474,20 +1460,9 @@ class HomeCredit:
         return df_train, df_test
 
 
-# In[5]:
-
 
 hc = HomeCredit()
-
-
-# In[6]:
-
-
 hc.load_all({'application':False, 'previous':False, 'installments':False, 'card':False, 'pos':False, 'bureau':False})
-
-
-# In[7]:
-
 
 lgb_model_params = {'n_estimators': 4000, 
             'learning_rate': 0.02,
